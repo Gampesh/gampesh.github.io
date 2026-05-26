@@ -1,50 +1,425 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vastu Shastra Consultant</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Vulcrate Paper Solutions | Protective Packaging Partner</title>
+    <style>
+        /* --- DESIGN SYSTEM & THEME (From Catalogue) --- */
+        :root {
+            --primary-kraft: #c59b6d;
+            --primary-dark: #1e1e1e;
+            --accent-blue: #006699;
+            --light-bg: #fdfaf6;
+            --white: #ffffff;
+            --gray-text: #555555;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-kraft);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-kraft);
+            margin: 0.5rem auto 0;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem var(--container-padding, 7.5%);
+        }
+
+        .logo-area h1 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+        }
+
+        .logo-area span {
+            color: var(--primary-kraft);
+        }
+
+        .iso-badge {
+            font-size: 0.75rem;
+            background: var(--light-bg);
+            padding: 2px 8px;
+            border: 1px solid var(--primary-kraft);
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-kraft);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1500') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-kraft);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* --- ABOUT & WHY CHOOSE US --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .features li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-kraft);
+            font-weight: bold;
+        }
+
+        /* --- PRODUCT CATALOGUE --- */
+        .products-section {
+            background-color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--white);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-img-placeholder {
+            height: 220px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-weight: bold;
+            border-bottom: 4px solid var(--primary-kraft);
+        }
+
+        /* Target unique colors from catalogue context items */
+        .card-pharmaceutical .product-img-placeholder { border-bottom-color: var(--accent-blue); }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .specs-box {
+            background-color: var(--light-bg);
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        .specs-box ul {
+            list-style: none;
+        }
+
+        /* --- CONSUMABLES & ADVERTISER STATEMENT --- */
+        .banner-highlight {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .banner-highlight h3 {
+            color: var(--primary-kraft);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        .contact-section {
+            padding: 4rem 0;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            text-align: center;
+            border-top: 4px solid var(--primary-kraft);
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item h4 {
+            color: var(--primary-kraft);
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #888888;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-details { gap: 2rem; flex-direction: column; }
+            .hero h2 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Vastu Shastra Consultation</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Vastu</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <div class="logo-area">
+                <h1>Vulcrate <span>Paper Solutions</span></h1>
+                <div class="iso-badge">An ISO 9001:2015 Certified Company</div> </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#consumables">Consumables</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Transform Your Space with Vastu</h2>
-            <p>Enhance positivity, harmony, and energy flow in your home or office using the ancient principles of Vastu Shastra.</p>
-        </section>
+    <section class="hero">
+        <h2>Your Partner in Protective Packaging</h2> <p>Creating strong and reliable edge protectors and rigid boxes that keep your products safe during storage and transport.</p> <a href="#contact" class="btn">Plan Your Packaging</a> </section>
 
-        <section class="services-preview">
-            <h2>Our Services</h2>
-            <ul>
-                <li><a href="services.html#residential">Residential Vastu</a></li>
-                <li><a href="services.html#commercial">Commercial Vastu</a></li>
-                <li><a href="services.html#spiritual">Spiritual Vastu</a></li>
-            </ul>
-        </section>
+    <section id="about" class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>High-Quality Protective Packaging</h3>
+                <p>Our skilled manufacturing team focuses on quality and consistency, making sure every piece meets the rigorous requirements of modern logistics and transit layouts.</p> <ul class="features">
+                    <li>Heavy-Duty Structural Strength</li> <li>Eco-Friendly Material Options</li> <li>Custom Sizing Available to Order</li> <li>Clear and Honest Pricing</li> </ul>
+            </div>
+            <div class="about-text" style="background-color: var(--white); padding: 2rem; border-left: 4px solid var(--primary-kraft); border-radius: 4px;">
+                <h3>Why Choose Vulcrate?</h3> <p>We provide structural integrity without unnecessary deadweight. With a comprehensive selection of material thicknesses, structural options, and custom configurations, we make streamlining your shipping cycle completely reliable.</p> </div>
+        </div>
+    </section>
 
-        <section class="testimonials">
-            <h2>What Our Clients Say</h2>
-            <p>"Vastu Shastra made a real difference in my home! The energy shift is incredible."</p>
-            <p>- Gampesh Sahu, Homeowner</p>
-        </section>
-    </main>
+    <section class="banner-highlight">
+        <h3>"We act as your silent Advertiser"</h3> <p>Bringing more value, structural safety, and crisp presentation to your product line up.</p> </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Product Catalogue</h2> <div class="product-grid">
+                
+                <div class="product-card">
+                    <div class="product-img-placeholder">[ L-SHAPED PROTECTION ]</div> <div class="product-info">
+                        <div>
+                            <h3>Corrugated Edge Protectors</h3> <p>Durable L-shaped edge protection engineered to secure and stabilize corner structures during intense transport packing.</p> </div>
+                        <div class="specs-box">
+                            <strong>Available Dimensions:</strong> <ul>
+                                <li>• Leg Size: 25x25mm to 100x100mm</li> <li>• Thickness: Up to 7mm</li> <li>• Length: As per customer requirement</li> </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-placeholder">[ CIRCULAR PROTECTION ]</div> <div class="product-info">
+                        <div>
+                            <h3>Circular Edge Protectors</h3> <p>A specialized circular frame design layout crafted specifically to safeguard sensitive kraft paper rolls from side edge dents and damage during transit manipulation.</p> </div>
+                        <div class="specs-box">
+                            <strong>Ideal For:</strong> Industrial paper rolls, cylindrical products, and heavy roll storage protective caps. </div>
+                    </div>
+                </div>
+
+                <div class="product-card card-pharmaceutical">
+                    <div class="product-img-placeholder" style="background-color: #eaf4f8;">[ RIGID &amp; FOLDABLE BOXES ]</div> <div class="product-info">
+                        <div>
+                            <h3>Premium Rigid &amp; Foldable Boxes</h3> <p>Collapsible rigid boxes made to hold sharp lines and keep sensitive pharmaceutical items, fine cosmetics, and premium goods structurally secure and neatly presented.</p> </div>
+                        <div class="specs-box">
+                            <strong>Applications:</strong> Pharma Monocartons (transit protection against moisture), premium gifting, and high-end retail setups. </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-placeholder">[ CANNISTER TYPE PACKAGING ]</div> <div class="product-info">
+                        <div>
+                            <h3>Corrugated &amp; Metal Head Canisters</h3> <p>Layered board structure adding structural firmness without weight penalties. Features custom options like smooth premium metal tops or clean top-bottom caps.</p> </div>
+                        <div class="specs-box">
+                            <strong>Cost-Effective:</strong> Delivers high-end protective security matching rigid containers at a fraction of the budget setup.</p> </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="consumables" class="container">
+        <h2 class="section-title">Packaging Consumables</h2> <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));">
+            
+            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 6px; border: 1px solid #eee;">
+                <h3>BOPP &amp; Custom Printed Tapes</h3> <p style="color: var(--gray-text); margin-bottom: 1rem;">Durable packaging tapes optimized to structural cardboard boxes while explicitly carrying your custom corporate branding messages using crisp, sharp prints.</p> </div>
+
+            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 6px; border: 1px solid #eee;">
+                <h3>Industrial Shrink Wraps</h3> <p style="color: var(--gray-text); margin-bottom: 1rem;">To fully round out your manufacturing requirements, we supply clean, ultra-durable shrink wrapping wraps at explicitly budget-friendly wholesale price brackets.</p> </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container contact-section">
+        <div class="contact-box">
+            <h2 style="margin-bottom: 1rem;">Contact Our Packaging Specialists</h2>
+            <p>Reach out today to discuss customized bulk orders, edge protector sizing configurations, and request estimates.</p> <div class="contact-details">
+                <div class="contact-item">
+                    <h4>Phone / WhatsApp</h4>
+                    <p style="font-size: 1.3rem; font-weight: bold; color: var(--primary-dark);">+91 9650805414</p> </div>
+                <div class="contact-item">
+                    <h4>Email Support</h4>
+                    <p style="font-size: 1.1rem; font-weight: bold;"><a href="mailto:vulcratepapersolutions@gmail.com" style="color: var(--accent-blue); text-decoration: none;">vulcratepapersolutions@gmail.com</a></p> </div>
+                <div class="contact-item">
+                    <h4>Factory Address</h4>
+                    <p style="color: var(--gray-text); font-size: 0.95rem;">Plot no.- 111, HSIIDC Industrial Area,<br>Phase-1, Sector-38, Rai, Sonipat, Haryana- 131029</p> </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Vastu Shastra Consultancy | All Rights Reserved</p>
-    </footer>
+        <p>&copy; 2026 Vulcrate Paper Solutions. All Rights Reserved. | Bulk Industrial Supply</p> </footer>
 
-    <script src="./script.js"></script>
 </body>
 </html>
