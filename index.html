@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +46,17 @@
             border-radius: 4px;
             font-weight: bold;
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn:hover {
             background-color: var(--primary-dark);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
         }
 
         .section-title {
@@ -84,7 +90,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem var(--container-padding, 7.5%);
+            padding: 1rem 5%;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo-area h1 {
@@ -110,6 +118,8 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
@@ -117,6 +127,8 @@
             color: var(--primary-dark);
             font-weight: 600;
             transition: var(--transition);
+            padding: 0.5rem 0;
+            display: block;
         }
 
         nav a:hover {
@@ -125,16 +137,24 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1500') no-repeat center center/cover;
+            background: linear-gradient(rgba(30,30,30,0.85), rgba(30,30,30,0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1500') no-repeat center;
+            background-size: cover;
+            background-attachment: scroll;
             color: var(--white);
             text-align: center;
             padding: 8rem 1rem;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero h2 {
             font-size: 3rem;
             margin-bottom: 1rem;
             color: var(--primary-kraft);
+            line-height: 1.2;
         }
 
         .hero p {
@@ -148,13 +168,18 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
             padding: 4rem 0;
         }
 
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
         }
 
         .features {
@@ -166,6 +191,7 @@
             margin-bottom: 0.8rem;
             position: relative;
             padding-left: 1.5rem;
+            line-height: 1.5;
         }
 
         .features li::before {
@@ -196,11 +222,16 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-card:active {
+            transform: translateY(-2px);
         }
 
         .product-img-placeholder {
@@ -212,10 +243,15 @@
             color: #aaa;
             font-weight: bold;
             border-bottom: 4px solid var(--primary-kraft);
+            font-size: 0.95rem;
+            padding: 1rem;
+            text-align: center;
         }
 
         /* Target unique colors from catalogue context items */
-        .card-pharmaceutical .product-img-placeholder { border-bottom-color: var(--accent-blue); }
+        .card-pharmaceutical .product-img-placeholder { 
+            border-bottom-color: var(--accent-blue); 
+        }
 
         .product-info {
             padding: 1.5rem;
@@ -228,12 +264,14 @@
         .product-info h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
         .product-info p {
             font-size: 0.95rem;
             color: var(--gray-text);
             margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
         .specs-box {
@@ -246,6 +284,11 @@
 
         .specs-box ul {
             list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .specs-box li {
+            margin-bottom: 0.3rem;
         }
 
         /* --- CONSUMABLES & ADVERTISER STATEMENT --- */
@@ -260,6 +303,12 @@
             color: var(--primary-kraft);
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .banner-highlight p {
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
 
         /* --- CONTACT & FOOTER --- */
@@ -276,6 +325,11 @@
             border-top: 4px solid var(--primary-kraft);
         }
 
+        .contact-box h2 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+        }
+
         .contact-details {
             display: flex;
             justify-content: center;
@@ -287,23 +341,327 @@
         .contact-item h4 {
             color: var(--primary-kraft);
             margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .contact-item p {
+            word-break: break-word;
+        }
+
+        .contact-item a {
+            word-break: break-all;
         }
 
         footer {
             background-color: var(--primary-dark);
             color: #888888;
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 1.5rem 1rem;
             font-size: 0.9rem;
             border-top: 1px solid #333;
+            line-height: 1.6;
         }
 
         /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+                padding: 1.5rem 0;
+            }
+
+            .about-grid {
+                gap: 2.5rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .contact-details {
+                gap: 2.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 1rem; }
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .contact-details { gap: 2rem; flex-direction: column; }
-            .hero h2 { font-size: 2.2rem; }
+            .container {
+                width: 90%;
+                padding: 1rem 0;
+            }
+
+            .nav-container {
+                padding: 1rem 4%;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .logo-area h1 {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav a {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 0;
+            }
+
+            .about-text {
+                width: 100%;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+                min-height: auto;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .product-img-placeholder {
+                height: 180px;
+                font-size: 0.9rem;
+            }
+
+            .product-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-item h4 {
+                font-size: 0.95rem;
+            }
+
+            .contact-item p {
+                font-size: 0.95rem;
+            }
+
+            .banner-highlight {
+                padding: 2rem 1rem;
+            }
+
+            .banner-highlight h3 {
+                font-size: 1.4rem;
+            }
+
+            .banner-highlight p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            .nav-container {
+                padding: 0.8rem 3%;
+            }
+
+            .logo-area h1 {
+                font-size: 1.1rem;
+            }
+
+            .iso-badge {
+                font-size: 0.7rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .section-title::after {
+                width: 40px;
+            }
+
+            .product-card {
+                margin-bottom: 1rem;
+            }
+
+            .product-img-placeholder {
+                height: 160px;
+                font-size: 0.85rem;
+            }
+
+            .product-info {
+                padding: 1.2rem;
+            }
+
+            .product-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .product-info p {
+                font-size: 0.9rem;
+            }
+
+            .specs-box {
+                font-size: 0.8rem;
+                padding: 0.6rem;
+            }
+
+            .contact-section {
+                padding: 2rem 0;
+            }
+
+            .contact-box {
+                padding: 1.5rem 1rem;
+                border-radius: 4px;
+            }
+
+            .contact-box h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .contact-box > p {
+                font-size: 0.9rem;
+            }
+
+            .contact-details {
+                gap: 1.2rem;
+                margin-top: 1.5rem;
+            }
+
+            .contact-item {
+                margin: 0.5rem 0;
+            }
+
+            .contact-item h4 {
+                font-size: 0.9rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .contact-item p {
+                font-size: 0.9rem;
+            }
+
+            .banner-highlight {
+                padding: 1.5rem 1rem;
+            }
+
+            .banner-highlight h3 {
+                font-size: 1.2rem;
+            }
+
+            .banner-highlight p {
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 1rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .about-text p {
+                font-size: 0.95rem;
+            }
+
+            .features li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn,
+            nav a,
+            .product-card {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            nav a {
+                padding: 0.8rem 0.5rem;
+            }
         }
     </style>
 </head>
@@ -314,7 +672,8 @@
             <div class="logo-area">
                 <a href="/" style="text-decoration: none;">
                     <h1>Vulcrate <span>Paper Solutions</span></h1></a>
-                <div class="iso-badge">An ISO 9001:2015 Certified Company</div> </div>
+                <div class="iso-badge">ISO 9001:2015 Certified</div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#about">About Us</a></li>
@@ -327,62 +686,103 @@
     </header>
 
     <section class="hero">
-        <h2>Your Partner in Protective Packaging</h2> <p>Creating strong and reliable edge protectors and rigid boxes that keep your products safe during storage and transport.</p> <a href="#contact" class="btn">Plan Your Packaging</a> </section>
+        <h2>Your Partner in Protective Packaging</h2>
+        <p>Creating strong and reliable edge protectors and rigid boxes that keep your products safe during storage and transport.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
 
     <section id="about" class="container">
         <div class="about-grid">
             <div class="about-text">
                 <h3>High-Quality Protective Packaging</h3>
-                <p>Our skilled manufacturing team focuses on quality and consistency, making sure every piece meets the rigorous requirements of modern logistics and transit layouts.</p> <ul class="features">
-                    <li>Heavy-Duty Structural Strength</li> <li>Eco-Friendly Material Options</li> <li>Custom Sizing Available to Order</li> <li>Clear and Honest Pricing</li> </ul>
+                <p>Our skilled manufacturing team focuses on quality and consistency, making sure every piece meets the rigorous requirements of modern logistics and transit layouts.</p>
+                <ul class="features">
+                    <li>Heavy-Duty Structural Strength</li>
+                    <li>Eco-Friendly Material Options</li>
+                    <li>Custom Sizing Available to Order</li>
+                    <li>Clear and Honest Pricing</li>
+                </ul>
             </div>
             <div class="about-text" style="background-color: var(--white); padding: 2rem; border-left: 4px solid var(--primary-kraft); border-radius: 4px;">
-                <h3>Why Choose Vulcrate?</h3> <p>We provide structural integrity without unnecessary deadweight. With a comprehensive selection of material thicknesses, structural options, and custom configurations, we make streamlining your shipping cycle completely reliable.</p> </div>
+                <h3>Why Choose Vulcrate?</h3>
+                <p>We provide structural integrity without unnecessary deadweight. With a comprehensive selection of material thicknesses, structural options, and custom solutions, Vulcrate delivers the exact protective specifications your logistics chain demands.</p>
+                <ul class="features">
+                    <li>ISO 9001:2015 Certification</li>
+                    <li>Rapid Production Turnaround</li>
+                    <li>Dedicated Customer Support</li>
+                    <li>Industry-Leading Quality Standards</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section class="banner-highlight">
-        <h3>"We act as your silent Advertiser"</h3> <p>Bringing more value, structural safety, and crisp presentation to your product line up.</p> </section>
+        <h3>"We act as your silent Advertiser"</h3>
+        <p>Bringing more value, structural safety, and crisp presentation to your product line up.</p>
+    </section>
 
     <section id="products" class="products-section">
         <div class="container">
-            <h2 class="section-title">Product Catalogue</h2> <div class="product-grid">
-                
+            <h2 class="section-title">Product Catalogue</h2>
+            <div class="product-grid">
+
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ L-SHAPED PROTECTION ]</div> <div class="product-info">
+                    <div class="product-img-placeholder">[ L-SHAPED PROTECTION ]</div>
+                    <div class="product-info">
                         <div>
-                            <h3>Corrugated Edge Protectors</h3> <p>Durable L-shaped edge protection engineered to secure and stabilize corner structures during intense transport packing.</p> </div>
+                            <h3>Corrugated Edge Protectors</h3>
+                            <p>Durable L-shaped edge protection engineered to secure and stabilize corner structures during intense transport packing.</p>
+                        </div>
                         <div class="specs-box">
-                            <strong>Available Dimensions:</strong> <ul>
-                                <li>• Leg Size: 25x25mm to 100x100mm</li> <li>• Thickness: Up to 7mm</li> <li>• Length: As per customer requirement</li> </ul>
+                            <strong>Available Dimensions:</strong>
+                            <ul>
+                                <li>• Leg Size: 25x25mm to 100x100mm</li>
+                                <li>• Thickness: Up to 7mm</li>
+                                <li>• Length: As per customer requirement</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ CIRCULAR PROTECTION ]</div> <div class="product-info">
+                    <div class="product-img-placeholder">[ CIRCULAR PROTECTION ]</div>
+                    <div class="product-info">
                         <div>
-                            <h3>Circular Edge Protectors</h3> <p>A specialized circular frame design layout crafted specifically to safeguard sensitive kraft paper rolls from side edge dents and damage during transit manipulation.</p> </div>
+                            <h3>Circular Edge Protectors</h3>
+                            <p>A specialized circular frame design layout crafted specifically to safeguard sensitive kraft paper rolls from side edge dents and damage.</p>
+                        </div>
                         <div class="specs-box">
-                            <strong>Ideal For:</strong> Industrial paper rolls, cylindrical products, and heavy roll storage protective caps. </div>
+                            <strong>Ideal For:</strong>
+                            <p>Industrial paper rolls, cylindrical products, and heavy roll storage protective caps.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="product-card card-pharmaceutical">
-                    <div class="product-img-placeholder" style="background-color: #eaf4f8;">[ RIGID &amp; FOLDABLE BOXES ]</div> <div class="product-info">
+                    <div class="product-img-placeholder" style="background-color: #eaf4f8;">[ RIGID &amp; FOLDABLE BOXES ]</div>
+                    <div class="product-info">
                         <div>
-                            <h3>Premium Rigid &amp; Foldable Boxes</h3> <p>Collapsible rigid boxes made to hold sharp lines and keep sensitive pharmaceutical items, fine cosmetics, and premium goods structurally secure and neatly presented.</p> </div>
+                            <h3>Premium Rigid &amp; Foldable Boxes</h3>
+                            <p>Collapsible rigid boxes made to hold sharp lines and keep sensitive pharmaceutical items, fine cosmetics, and premium goods safe.</p>
+                        </div>
                         <div class="specs-box">
-                            <strong>Applications:</strong> Pharma Monocartons (transit protection against moisture), premium gifting, and high-end retail setups. </div>
+                            <strong>Applications:</strong>
+                            <p>Pharma Monocartons (transit protection against moisture), premium gifting, and high-end retail setups.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ CANNISTER TYPE PACKAGING ]</div> <div class="product-info">
+                    <div class="product-img-placeholder">[ CANNISTER TYPE PACKAGING ]</div>
+                    <div class="product-info">
                         <div>
-                            <h3>Corrugated &amp; Metal Head Canisters</h3> <p>Layered board structure adding structural firmness without weight penalties. Features custom options like smooth premium metal tops or clean top-bottom caps.</p> </div>
+                            <h3>Corrugated &amp; Metal Head Canisters</h3>
+                            <p>Layered board structure adding structural firmness without weight penalties. Features custom options like smooth premium material finishes.</p>
+                        </div>
                         <div class="specs-box">
-                            <strong>Cost-Effective:</strong> Delivers high-end protective security matching rigid containers at a fraction of the budget setup.</p> </div>
+                            <strong>Cost-Effective:</strong>
+                            <p>Delivers high-end protective security matching rigid containers at a fraction of the budget setup.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -391,36 +791,46 @@
     </section>
 
     <section id="consumables" class="container">
-        <h2 class="section-title">Packaging Consumables</h2> <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));">
-            
-            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 6px; border: 1px solid #eee;">
-                <h3>BOPP &amp; Custom Printed Tapes</h3> <p style="color: var(--gray-text); margin-bottom: 1rem;">Durable packaging tapes optimized to structural cardboard boxes while explicitly carrying your custom corporate branding messages using crisp, sharp prints.</p> </div>
+        <h2 class="section-title">Packaging Consumables</h2>
+        <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
 
             <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 6px; border: 1px solid #eee;">
-                <h3>Industrial Shrink Wraps</h3> <p style="color: var(--gray-text); margin-bottom: 1rem;">To fully round out your manufacturing requirements, we supply clean, ultra-durable shrink wrapping wraps at explicitly budget-friendly wholesale price brackets.</p> </div>
+                <h3>BOPP &amp; Custom Printed Tapes</h3>
+                <p style="color: var(--gray-text); margin-bottom: 1rem;">Durable packaging tapes optimized to structural cardboard boxes while explicitly carrying your brand messaging and custom designs.</p>
+            </div>
+
+            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 6px; border: 1px solid #eee;">
+                <h3>Industrial Shrink Wraps</h3>
+                <p style="color: var(--gray-text); margin-bottom: 1rem;">To fully round out your manufacturing requirements, we supply clean, ultra-durable shrink wrap options for bulk bundling and secure transit packaging.</p>
+            </div>
 
         </div>
     </section>
 
     <section id="contact" class="container contact-section">
         <div class="contact-box">
-            <h2 style="margin-bottom: 1rem;">Contact Our Packaging Specialists</h2>
-            <p>Reach out today to discuss customized bulk orders, edge protector sizing configurations, and request estimates.</p> <div class="contact-details">
+            <h2>Contact Our Packaging Specialists</h2>
+            <p>Reach out today to discuss customized bulk orders, edge protector sizing configurations, and request estimates.</p>
+            <div class="contact-details">
                 <div class="contact-item">
                     <h4>Phone / WhatsApp</h4>
-                    <p style="font-size: 1.3rem; font-weight: bold; color: var(--primary-dark);">+91 9650805414</p> </div>
+                    <p style="font-size: 1.3rem; font-weight: bold; color: var(--primary-dark);"><a href="tel:+919650805414" style="color: var(--primary-dark); text-decoration: none;">+91 9650805414</a></p>
+                </div>
                 <div class="contact-item">
                     <h4>Email Support</h4>
-                    <p style="font-size: 1.1rem; font-weight: bold;"><a href="mailto:vulcratepapersolutions@gmail.com" style="color: var(--accent-blue); text-decoration: none;">vulcratepapersolutions@gmail.com</a></p> </div>
+                    <p style="font-size: 1.1rem; font-weight: bold;"><a href="mailto:vulcratepapersolutions@gmail.com" style="color: var(--accent-blue); text-decoration: none;">vulcratepapersolutions@gmail.com</a></p>
+                </div>
                 <div class="contact-item">
                     <h4>Factory Address</h4>
-                    <p style="color: var(--gray-text); font-size: 0.95rem;">Plot no.- 111, HSIIDC Industrial Area,<br>Phase-1, Sector-38, Rai, Sonipat, Haryana- 131029</p> </div>
+                    <p style="color: var(--gray-text); font-size: 0.95rem;">Plot no.- 111, HSIIDC Industrial Area,<br>Phase-1, Sector-38, Rai, Sonipat, Haryana- 131029</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Vulcrate Paper Solutions. All Rights Reserved. | Bulk Industrial Supply</p> </footer>
+        <p>&copy; 2026 Vulcrate Paper Solutions. All Rights Reserved. | Bulk Industrial Supply</p>
+    </footer>
 
 </body>
 </html>
