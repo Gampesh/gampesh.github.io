@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vulcrate Paper Solutions - Premium protective packaging, edge protectors, rigid boxes, and industrial packaging solutions. ISO 9001:2015 certified with custom bulk orders.">
+    <meta name="description" content="Vulcrate Paper Solutions - Premium protective packaging, edge protectors, rigid boxes, and industrial packaging solutions. ISO 9001:2015 certified with custom [...]">
     <meta name="keywords" content="protective packaging, edge protectors, corrugated boxes, rigid boxes, packaging solutions, industrial packaging">
     <meta name="author" content="Vulcrate Paper Solutions">
     <meta name="robots" content="index, follow">
@@ -215,7 +215,7 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(135deg, rgba(30,30,30,0.8), rgba(197, 155, 109, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1500') no-repeat center;
+            background: linear-gradient(135deg, rgba(30,30,30,0.8), rgba(197, 155, 109, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1500');
             background-size: cover;
             background-attachment: scroll;
             color: var(--white);
@@ -283,6 +283,138 @@
         .badge-item p {
             color: var(--gray-text);
             font-size: 0.9rem;
+        }
+
+        /* --- CATALOGUE SHOWCASE SECTION --- */
+        .catalogue-section {
+            background: linear-gradient(135deg, rgba(197, 155, 109, 0.1), rgba(0, 102, 153, 0.05));
+            padding: 4rem 0;
+            border-top: 3px solid var(--primary-kraft);
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .catalogue-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .catalogue-preview {
+            text-align: center;
+            position: relative;
+        }
+
+        .catalogue-preview-img {
+            background: linear-gradient(135deg, var(--white), var(--gray-light));
+            border: 3px solid var(--primary-kraft);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(197, 155, 109, 0.3);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalogue-preview-img:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(197, 155, 109, 0.4);
+        }
+
+        .catalogue-preview-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .catalogue-icon {
+            font-size: 5rem;
+            color: var(--primary-kraft);
+            margin-bottom: 1rem;
+        }
+
+        .catalogue-icon-label {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            font-weight: 600;
+        }
+
+        .catalogue-content h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .catalogue-content p {
+            color: var(--gray-text);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .catalogue-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .catalogue-features li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        .catalogue-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-kraft);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .catalogue-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            justify-content: flex-start;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .btn-download::before {
+            content: '⬇';
+            font-size: 1.2rem;
+        }
+
+        .btn-view {
+            background-color: var(--accent-blue);
+        }
+
+        .btn-view:hover {
+            background-color: #004d73;
         }
 
         /* --- ABOUT & WHY CHOOSE US --- */
@@ -746,6 +878,10 @@
                 gap: 2.5rem;
             }
 
+            .catalogue-container {
+                gap: 2.5rem;
+            }
+
             .product-grid {
                 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
                 gap: 1.5rem;
@@ -835,12 +971,25 @@
                 padding: 2rem 0;
             }
 
+            .catalogue-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .catalogue-buttons {
+                justify-content: center;
+            }
+
             .about-text {
                 width: 100%;
             }
 
             .about-text h3 {
                 font-size: 1.5rem;
+            }
+
+            .catalogue-content h3 {
+                font-size: 1.6rem;
             }
 
             .hero {
@@ -998,8 +1147,6 @@
             .btn {
                 padding: 0.7rem 1.5rem;
                 font-size: 0.9rem;
-                width: 100%;
-                text-align: center;
             }
 
             .section-title {
@@ -1007,415 +1154,317 @@
                 margin-bottom: 1.5rem;
             }
 
-            .section-title::after {
-                width: 40px;
+            .catalogue-preview-img {
+                min-height: 280px;
+                padding: 1.5rem;
+            }
+
+            .catalogue-icon {
+                font-size: 3.5rem;
+            }
+
+            .catalogue-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .catalogue-content p {
+                font-size: 0.95rem;
+            }
+
+            .catalogue-features li {
+                padding: 0.6rem 0;
+                padding-left: 2rem;
+                font-size: 0.9rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
             }
 
             .product-card {
                 margin-bottom: 1rem;
             }
 
-            .product-img-placeholder {
-                height: 160px;
-                font-size: 0.85rem;
-            }
-
-            .product-info {
-                padding: 1.2rem;
-            }
-
-            .product-info h3 {
-                font-size: 1rem;
-            }
-
-            .product-info p {
-                font-size: 0.9rem;
-            }
-
-            .specs-box {
-                font-size: 0.8rem;
-                padding: 0.8rem;
-            }
-
-            .contact-section {
-                padding: 2rem 0;
-            }
-
             .contact-box {
                 padding: 1.5rem 1rem;
-                border-radius: 6px;
-            }
-
-            .contact-box h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .contact-box > p {
-                font-size: 0.9rem;
-            }
-
-            .contact-details {
-                gap: 1.2rem;
-                margin-top: 1.5rem;
-            }
-
-            .contact-item {
-                margin: 0.5rem 0;
             }
 
             .contact-item h4 {
-                font-size: 0.9rem;
-                margin-bottom: 0.2rem;
-            }
-
-            .contact-item p {
-                font-size: 0.9rem;
-            }
-
-            .banner-highlight {
-                padding: 1.5rem 1rem;
-            }
-
-            .banner-highlight h3 {
-                font-size: 1.2rem;
-            }
-
-            .banner-highlight p {
-                font-size: 0.95rem;
-            }
-
-            .newsletter-section {
-                padding: 2rem 1rem;
-            }
-
-            .newsletter-content h3 {
-                font-size: 1.3rem;
-            }
-
-            .newsletter-content p {
-                font-size: 0.9rem;
-            }
-
-            footer {
-                padding: 1.5rem 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            .about-text h3 {
-                font-size: 1.2rem;
-            }
-
-            .about-text p {
-                font-size: 0.95rem;
-            }
-
-            .features li {
-                font-size: 0.9rem;
-            }
-
-            .trust-badges {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+                font-size: 0.85rem;
             }
 
             .badge-item {
-                padding: 1rem;
+                padding: 1rem 0.5rem;
             }
 
             .badge-icon {
                 font-size: 2rem;
             }
 
-            .testimonial-card {
-                padding: 1.5rem;
-            }
-
-            .faq-header {
-                padding: 1.2rem;
-                font-size: 0.95rem;
-            }
-
-            .faq-content p {
-                padding: 1.2rem;
-                font-size: 0.9rem;
-            }
-
-            .whatsapp-float {
-                bottom: 1rem;
-                right: 1rem;
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-        }
-
-        /* Touch-friendly improvements */
-        @media (hover: none) and (pointer: coarse) {
-            .btn,
-            nav a,
-            .product-card {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            nav a {
-                padding: 1rem 0.5rem;
+            .trust-badges {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
     </style>
 </head>
+
 <body>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Organization",
-        "name": "Vulcrate Paper Solutions",
-        "url": "https://vulcratepapersolutions.com",
-        "logo": "https://vulcratepapersolutions.com/logo.png",
-        "sameAs": [
-            "https://www.facebook.com/vulcrate",
-            "https://www.instagram.com/vulcrate",
-            "https://twitter.com/vulcrate"
-        ],
-        "contact": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Support",
-            "telephone": "+919650805414",
-            "email": "vulcratepapersolutions@gmail.com"
-        }
-    }
-    </script>
-
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo-area">
-                <a href="/" style="text-decoration: none;">
-                    <h1>Vulcrate <span>Paper Solutions</span></h1></a>
+                <h1>Vulcrate<span>Paper</span></h1>
                 <div class="iso-badge">ISO 9001:2015</div>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <button class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <nav id="navMenu">
                 <ul>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#catalogue">Catalogue</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#consumables">Consumables</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <h2>Premium Protective Packaging Solutions</h2>
-        <p>ISO 9001:2015 certified partner for edge protectors, rigid boxes, and custom packaging. Trusted by industry leaders across India.</p>
+        <p>Vulcrate - Your Trusted Partner for Custom Edge Protectors, Rigid Boxes & Industrial Packaging</p>
         <div class="hero-buttons">
-            <a href="#contact" class="btn">Get Free Quote</a>
-            <a href="tel:+919650805414" class="btn btn-secondary">Call Now</a>
+            <a href="#catalogue" class="btn">View Catalogue</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
     </section>
 
-    <!-- TRUST BADGES -->
+    <!-- Trust Section -->
     <section class="trust-section">
         <div class="container">
             <div class="trust-badges">
                 <div class="badge-item">
                     <div class="badge-icon">✓</div>
                     <h4>ISO 9001:2015</h4>
-                    <p>Internationally Certified Quality</p>
+                    <p>International Quality Certified</p>
                 </div>
                 <div class="badge-item">
-                    <div class="badge-icon">⚡</div>
-                    <h4>Fast Turnaround</h4>
-                    <p>Quick Production & Delivery</p>
+                    <div class="badge-icon">🚀</div>
+                    <h4>Fast Delivery</h4>
+                    <p>Quick Turnaround Time</p>
                 </div>
                 <div class="badge-item">
-                    <div class="badge-icon">💰</div>
-                    <h4>Competitive Pricing</h4>
-                    <p>Best Value for Money</p>
+                    <div class="badge-icon">🎨</div>
+                    <h4>Custom Design</h4>
+                    <p>Tailored Solutions</p>
                 </div>
                 <div class="badge-item">
-                    <div class="badge-icon">🛡️</div>
-                    <h4>Quality Assured</h4>
-                    <p>100% Satisfaction Guarantee</p>
+                    <div class="badge-icon">💼</div>
+                    <h4>Expert Support</h4>
+                    <p>Dedicated Team</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="container">
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>Industry-Leading Protective Packaging</h3>
-                <p>With over a decade of experience, Vulcrate Paper Solutions has established itself as the most trusted name in protective packaging across India. Our team of experts is dedicated to providing innovative solutions that keep your products safe.</p>
-                <ul class="features">
-                    <li>Heavy-Duty Structural Strength</li>
-                    <li>Eco-Friendly Material Options</li>
-                    <li>Custom Sizing Available</li>
-                    <li>Competitive Bulk Pricing</li>
-                </ul>
-            </div>
-            <div class="about-text" style="background-color: var(--white); padding: 2rem; border-left: 5px solid var(--primary-kraft); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                <h3>Why Choose Vulcrate?</h3>
-                <p>We combine quality, reliability, and affordability to deliver the best protective packaging solutions. Our state-of-the-art manufacturing facility ensures every product meets international standards.</p>
-                <ul class="features">
-                    <li>ISO 9001:2015 Certified</li>
-                    <li>Rapid Production Turnaround</li>
-                    <li>Dedicated Support Team</li>
-                    <li>Custom Solutions Available</li>
-                </ul>
-                <a href="#contact" class="btn" style="margin-top: 1rem;">Request Consultation</a>
+    <!-- Catalogue Showcase Section -->
+    <section id="catalogue" class="catalogue-section">
+        <div class="container">
+            <div class="catalogue-container">
+                <div class="catalogue-preview">
+                    <div class="catalogue-preview-img">
+                        <div>
+                            <div class="catalogue-icon">📋</div>
+                            <div class="catalogue-icon-label">Explore Complete Catalogue</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalogue-content">
+                    <h3>Our Complete Product Catalogue</h3>
+                    <p>Discover our extensive range of premium protective packaging solutions. From edge protectors to rigid boxes, pharmaceutical packaging to custom industrial solutions - all designed with precision and quality in mind.</p>
+                    
+                    <ul class="catalogue-features">
+                        <li><strong>Edge Protectors & Corner Boards</strong> - Various profiles and materials</li>
+                        <li><strong>Rigid Boxes</strong> - Premium quality packaging for premium products</li>
+                        <li><strong>Pharmaceutical Packaging</strong> - Certified and compliant solutions</li>
+                        <li><strong>Industrial Packaging</strong> - Custom solutions for your needs</li>
+                        <li><strong>Kraft & Corrugated Materials</strong> - Sustainable options available</li>
+                        <li><strong>Custom Designs</strong> - Tailored to your specifications</li>
+                    </ul>
+                    
+                    <div class="catalogue-buttons">
+                        <a href="Catalogue- V.pdf" class="btn btn-download" download>Download PDF Catalogue</a>
+                        <a href="#products" class="btn btn-view">View Products</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ADVERTISER BANNER -->
-    <section class="banner-highlight">
-        <h3>"We Act as Your Silent Advertiser"</h3>
-        <p>Enhance your brand presence with premium protective packaging that speaks quality. Every box tells your story.</p>
-    </section>
-
-    <!-- PRODUCTS SECTION -->
+    <!-- Products Section -->
     <section id="products" class="products-section">
         <div class="container">
-            <h2 class="section-title">Premium Product Catalogue</h2>
+            <h2 class="section-title">Our Products</h2>
             <div class="product-grid">
-
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ L-SHAPED PROTECTION ]</div>
+                    <div class="product-img-placeholder">📦 Edge Protectors</div>
                     <div class="product-info">
                         <div>
-                            <h3>Corrugated Edge Protectors</h3>
-                            <p>Professional L-shaped edge protection engineered for secure corner stabilization during intense transport operations.</p>
+                            <h3>Edge Protectors & Corner Boards</h3>
+                            <p>Premium protective packaging designed to safeguard edges and corners of your valuable products during shipping and handling.</p>
                         </div>
                         <div class="specs-box">
-                            <strong>Specifications:</strong>
+                            <strong>Available Profiles:</strong>
                             <ul>
-                                <li>• Leg Size: 25×25mm to 100×100mm</li>
-                                <li>• Thickness: Up to 7mm</li>
-                                <li>• Custom Lengths Available</li>
-                                <li>• Eco-Friendly Materials</li>
+                                <li>L-Profile (90°)</li>
+                                <li>U-Profile</li>
+                                <li>Triangular Profile</li>
+                                <li>Custom Profiles</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ CIRCULAR PROTECTION ]</div>
+                    <div class="product-img-placeholder">📮 Rigid Boxes</div>
                     <div class="product-info">
                         <div>
-                            <h3>Circular Edge Protectors</h3>
-                            <p>Specialized circular frame design for protecting sensitive rolls and cylindrical products from edge damage.</p>
+                            <h3>Rigid & Premium Boxes</h3>
+                            <p>Sturdy and attractive packaging solutions perfect for luxury goods, electronics, and premium product presentations.</p>
                         </div>
                         <div class="specs-box">
-                            <strong>Applications:</strong>
+                            <strong>Features:</strong>
                             <ul>
-                                <li>• Paper Rolls Protection</li>
-                                <li>• Cylindrical Products</li>
-                                <li>• Roll Storage Caps</li>
-                                <li>• Custom Sizes</li>
+                                <li>High-density construction</li>
+                                <li>Custom printing options</li>
+                                <li>Various sizes available</li>
+                                <li>Premium finishes</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card card-pharmaceutical">
-                    <div class="product-img-placeholder" style="background: linear-gradient(135deg, #eaf4f8, #d4ebf5);">[ RIGID &amp; FOLDABLE BOXES ]</div>
+                    <div class="product-img-placeholder">💊 Pharma Packaging</div>
                     <div class="product-info">
                         <div>
-                            <h3>Premium Rigid & Foldable Boxes</h3>
-                            <p>Collapsible rigid boxes designed to maintain sharp lines while providing maximum protection for pharmaceuticals and premium goods.</p>
+                            <h3>Pharmaceutical Packaging</h3>
+                            <p>Compliant, secure packaging solutions designed specifically for pharmaceutical and medical products with precision requirements.</p>
                         </div>
                         <div class="specs-box">
-                            <strong>Perfect For:</strong>
+                            <strong>Standards Compliant:</strong>
                             <ul>
-                                <li>• Pharmaceutical Products</li>
-                                <li>• Cosmetics & Beauty</li>
-                                <li>• Premium Gifting</li>
-                                <li>• High-End Retail</li>
+                                <li>GxP Compliance</li>
+                                <li>Temperature resistant</li>
+                                <li>Protective linings</li>
+                                <li>Safety seals included</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-img-placeholder">[ CANISTER TYPE PACKAGING ]</div>
+                    <div class="product-img-placeholder">🏭 Industrial Solutions</div>
                     <div class="product-info">
                         <div>
-                            <h3>Corrugated & Metal Head Canisters</h3>
-                            <p>Layered board structure combining strength and lightweight design. Custom premium finishes available for brand presentation.</p>
+                            <h3>Industrial & Custom Packaging</h3>
+                            <p>Robust packaging solutions tailored for industrial applications, heavy goods, and specialized shipping requirements.</p>
                         </div>
                         <div class="specs-box">
-                            <strong>Features:</strong>
+                            <strong>Customization:</strong>
                             <ul>
-                                <li>• Lightweight Design</li>
-                                <li>• Premium Finishes</li>
-                                <li>• Cost-Effective Solution</li>
-                                <li>• Bulk Discounts</li>
+                                <li>Bespoke designs</li>
+                                <li>Bulk orders welcome</li>
+                                <li>Fast prototyping</li>
+                                <li>Technical support</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <div class="product-card">
+                    <div class="product-img-placeholder">📄 Kraft Solutions</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Kraft & Corrugated Packaging</h3>
+                            <p>Eco-friendly kraft and corrugated packaging options perfect for sustainable businesses and environmentally conscious brands.</p>
+                        </div>
+                        <div class="specs-box">
+                            <strong>Material Options:</strong>
+                            <ul>
+                                <li>100% Recycled kraft</li>
+                                <li>Corrugated variants</li>
+                                <li>Biodegradable options</li>
+                                <li>Customizable weights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-placeholder">✨ Premium Finishes</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Custom Finishes & Printing</h3>
+                            <p>Professional finishing options including printing, coating, and customization to match your brand identity perfectly.</p>
+                        </div>
+                        <div class="specs-box">
+                            <strong>Finishing Options:</strong>
+                            <ul>
+                                <li>Offset printing</li>
+                                <li>Flexography printing</li>
+                                <li>Matte/Gloss coating</li>
+                                <li>Embossing & die-cutting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
         <div class="container">
-            <h2 class="section-title" style="color: var(--white);">Customer Testimonials</h2>
+            <h2 class="section-title">What Our Clients Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Vulcrate provided exactly what we needed - quality packaging at competitive prices. Their fast turnaround saved us during peak season."</p>
+                    <p>"Vulcrate provides outstanding quality packaging solutions. Their attention to detail and quick turnaround times have been invaluable to our business."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">RK</div>
+                        <div class="author-avatar">R</div>
                         <div class="author-info">
                             <h4>Rajesh Kumar</h4>
-                            <p>Export Manager, Tech Industries</p>
+                            <p>Import/Export Business</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Professional service, reliable delivery, and excellent support. Vulcrate is our trusted packaging partner for all our product lines."</p>
+                    <p>"Professional team, excellent products, and competitive pricing. Vulcrate is our go-to partner for all packaging needs. Highly recommended!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AS</div>
+                        <div class="author-avatar">P</div>
                         <div class="author-info">
-                            <h4>Anjali Singh</h4>
-                            <p>Operations Director, Logistics Plus</p>
+                            <h4>Priya Sharma</h4>
+                            <p>Manufacturing Director</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Great quality, competitive pricing, and responsive customer service. Vulcrate understands our business needs perfectly."</p>
+                    <p>"The customization options and quality of materials are exceptional. Vulcrate truly understands what it means to deliver premium packaging solutions."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">PM</div>
+                        <div class="author-avatar">M</div>
                         <div class="author-info">
-                            <h4>Priya Mehta</h4>
-                            <p>Procurement Head, Manufacturing Corp</p>
+                            <h4>Mohan Reddy</h4>
+                            <p>Logistics Manager</p>
                         </div>
                     </div>
                 </div>
@@ -1423,147 +1472,128 @@
         </div>
     </section>
 
-    <!-- CONSUMABLES SECTION -->
-    <section id="consumables" class="container">
-        <h2 class="section-title">Packaging Consumables</h2>
-        <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-
-            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary-kraft); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                <h3 style="color: var(--primary-kraft); margin-bottom: 0.8rem; font-size: 1.2rem;">BOPP & Custom Printed Tapes</h3>
-                <p style="color: var(--gray-text); margin-bottom: 1rem; line-height: 1.6;">Durable, high-strength packaging tapes optimized for secure cardboard box sealing while carrying your brand message and custom designs for maximum impact.</p>
-                <a href="#contact" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Get Samples</a>
-            </div>
-
-            <div class="product-box" style="background: var(--white); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary-kraft); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                <h3 style="color: var(--primary-kraft); margin-bottom: 0.8rem; font-size: 1.2rem;">Industrial Shrink Wraps</h3>
-                <p style="color: var(--gray-text); margin-bottom: 1rem; line-height: 1.6;">Ultra-durable shrink wrap solutions for bulk bundling and secure transit packaging. Perfect for multiple product sizes and weight capacities.</p>
-                <a href="#contact" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Get Samples</a>
-            </div>
-
+    <!-- Banner Highlight -->
+    <section class="banner-highlight">
+        <div class="container">
+            <h3>ISO 9001:2015 Certified</h3>
+            <p>We maintain the highest international standards in our manufacturing process, ensuring every product meets rigorous quality benchmarks.</p>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section id="faq" class="faq-section">
+    <!-- FAQ Section -->
+    <section class="faq-section">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        <span>What materials do you use in your packaging?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>We use premium kraft paper, corrugated board, and specialized materials depending on your requirements. All materials are sourced from certified suppliers and meet international standards. We also offer eco-friendly and recycled options for environmentally conscious clients.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>Can you provide custom designs?</span>
+                        <span class="faq-icon">⌄</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>Absolutely! We specialize in custom packaging solutions. Our design team can work with your specifications to create packaging that perfectly matches your brand and product requirements. We offer free design consultation and samples.</p>
+                    </div>
+                </div>
+
                 <div class="faq-item">
                     <div class="faq-header">
                         <span>What is your minimum order quantity?</span>
-                        <span class="faq-icon">▼</span>
+                        <span class="faq-icon">⌄</span>
                     </div>
                     <div class="faq-content">
-                        <p>We offer flexible MOQs starting from 500 units for most products. For custom orders, we can work with smaller quantities. Contact us for specific requirements.</p>
+                        <p>Our minimum order quantities vary depending on the product type and customization level. For standard products, we can work with smaller orders. For custom designs, we typically require minimum quantities. Please contact us for specific details on your project.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-header">
-                        <span>What is your production lead time?</span>
-                        <span class="faq-icon">▼</span>
+                        <span>How long does it take to deliver?</span>
+                        <span class="faq-icon">⌄</span>
                     </div>
                     <div class="faq-content">
-                        <p>Standard production time is 7-10 business days from order confirmation. We offer expedited processing for urgent requirements at competitive rates.</p>
+                        <p>Delivery times depend on the order size and complexity. Standard products typically ship within 5-7 business days. Custom orders may take 2-3 weeks depending on design and production requirements. We offer expedited services for urgent orders.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-header">
-                        <span>Do you offer customization options?</span>
-                        <span class="faq-icon">▼</span>
+                        <span>Do you serve small businesses?</span>
+                        <span class="faq-icon">⌄</span>
                     </div>
                     <div class="faq-content">
-                        <p>Yes! We provide extensive customization including custom sizes, colors, printing, and material specifications. Our team will work with you to create the perfect solution.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <span>Are your products eco-friendly?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-content">
-                        <p>We offer eco-friendly material options for environmentally conscious customers. All our products meet international environmental standards and are recyclable.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <span>What payment methods do you accept?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-content">
-                        <p>We accept bank transfers, cheques, credit/debit cards, and online payment gateways. Custom payment terms can be negotiated for bulk orders.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <span>Do you provide samples?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-content">
-                        <p>Yes, we provide free samples for first-time inquiries. Simply contact us with your specifications, and we'll send samples within 2-3 days.</p>
+                        <p>Yes! We work with businesses of all sizes, from startups to large corporations. We understand the unique needs of small businesses and offer flexible solutions with competitive pricing. Our team is happy to help you find cost-effective packaging solutions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEWSLETTER SECTION -->
+    <!-- Newsletter Section -->
     <section class="newsletter-section">
-        <div class="newsletter-content">
-            <h3>Stay Updated with Latest Offers</h3>
-            <p>Subscribe to our newsletter and get exclusive discounts, product updates, and industry insights delivered to your inbox.</p>
-            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="container contact-section">
-        <div class="contact-box">
-            <h2>Get Your Free Quote Today</h2>
-            <p>Contact our packaging specialists to discuss your requirements and receive a custom quotation within 24 hours.</p>
-            <div class="contact-details">
-                <div class="contact-item">
-                    <h4>📞 Phone / WhatsApp</h4>
-                    <p><a href="tel:+919650805414">+91 9650805414</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>✉️ Email Support</h4>
-                    <p><a href="mailto:vulcratepapersolutions@gmail.com">vulcratepapersolutions@gmail.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <h4>📍 Factory Address</h4>
-                    <p>Plot no. 111, HSIIDC Industrial Area,<br>Phase-1, Sector-38, Rai, Sonipat,<br>Haryana- 131029</p>
-                </div>
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for latest updates on products, offers, and industry insights.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Vulcrate Paper Solutions. All Rights Reserved.</p>
-        <p>ISO 9001:2015 Certified | Bulk Industrial Supply | Premium Protective Packaging Solutions</p>
-        <p>Plot no. 111, HSIIDC Industrial Area, Phase-1, Sector-38, Rai, Sonipat, Haryana- 131029</p>
-    </footer>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Get In Touch</h2>
+                <p>Ready to find the perfect packaging solution? We're here to help!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <h4>📞 Phone</h4>
+                        <p><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>✉️ Email</h4>
+                        <p><a href="mailto:info@vulcratepapersolutions.com">info@vulcratepapersolutions.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📍 Address</h4>
+                        <p>Your Business Address<br>City, State - PIN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/919650805414?text=Hi%20Vulcrate,%20I%20would%20like%20to%20inquire%20about%20your%20packaging%20solutions." target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/919XXXXXXXXX?text=Hello%20Vulcrate%2C%20I%20need%20packaging%20solutions" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
         💬
     </a>
 
-    <!-- Scripts -->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vulcrate Paper Solutions. All rights reserved.</p>
+        <p>ISO 9001:2015 Certified | Premium Protective Packaging Solutions</p>
+        <p>Designed with precision. Delivered with care.</p>
+    </footer>
+
     <script>
-        // Hamburger Menu Toggle
+        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -1571,58 +1601,34 @@
         // Close menu when a link is clicked
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
 
         // FAQ Accordion
-        const faqHeaders = document.querySelectorAll('.faq-header');
-        faqHeaders.forEach(header => {
-            header.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                faqItem.classList.toggle('active');
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            header.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
             });
         });
 
-        // Newsletter Form
+        // Newsletter Form Handler
         function handleNewsletterSubmit(event) {
             event.preventDefault();
             const email = event.target.querySelector('input[type="email"]').value;
-            alert('Thank you for subscribing! Check your email for exclusive offers.');
+            alert(`Thank you for subscribing! We'll send updates to ${email}`);
             event.target.reset();
         }
-
-        // Lazy Loading for Images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
     </script>
-
 </body>
+
 </html>
