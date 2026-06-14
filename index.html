@@ -390,23 +390,9 @@
             font-weight: bold;
         }
 
-        .catalogue-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .catalogue-button {
+            display: inline-block;
             margin-top: 2rem;
-            justify-content: flex-start;
-        }
-
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .btn-download::before {
-            content: '⬇';
-            font-size: 1.2rem;
         }
 
         .btn-view {
@@ -976,8 +962,8 @@
                 gap: 2rem;
             }
 
-            .catalogue-buttons {
-                justify-content: center;
+            .catalogue-button {
+                text-align: center;
             }
 
             .about-text {
@@ -1297,8 +1283,7 @@
                         <li><strong>Custom Designs</strong> - Tailored to your specifications</li>
                     </ul>
                     
-                    <div class="catalogue-buttons">
-                        <a href="Catalogue- V.pdf" class="btn btn-download" download>Download PDF Catalogue</a>
+                    <div class="catalogue-button">
                         <a href="#products" class="btn btn-view">View Products</a>
                     </div>
                 </div>
